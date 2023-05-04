@@ -1,0 +1,45 @@
+<style>
+    .full-width-field {
+        width: 100%;
+    }
+</style>
+<div class="content" style="padding-left: 20%;padding-right: 20%;padding-top: 7%;">
+    <form class="example-form" [formGroup]="formGroup">
+        <mat-card>
+            <mat-card-header style="align-self: center; color: #004D40;font-weight: bold;">
+                <h2 >Costrac Login</h2>
+            </mat-card-header>
+
+
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-8">
+                    <mat-form-field class="example-full-width" style="width: 400px;">
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="Enter Username" formControlName="userName" value="">
+                    </mat-form-field>
+                    <mat-error *ngIf="formGroup.get('userName').hasError('required')">Please enter password.</mat-error>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-8">
+                    <mat-form-field class="example-full-width"  style="width: 400px;">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password" placeholder="Enter Password">
+                    </mat-form-field>
+                    <mat-error *ngIf="formGroup.get('password').hasError('required')">Please enter password.</mat-error>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <button mat-raised-button color="primary" (click)="loginProcess($event)">Login</button>
+                </div>
+            </div>
+
+        </mat-card>
+    </form>
+
+</div>
